@@ -19,7 +19,6 @@ func CriarUsuario(w http.ResponseWriter, r *http.Request) {
 	if erro != nil {
 		respostas.Erro(w, http.StatusUnprocessableEntity, erro)
 		return
-
 	}
 
 	var usuario modelos.Usuario
@@ -45,7 +44,7 @@ func CriarUsuario(w http.ResponseWriter, r *http.Request) {
 	if erro != nil {
 		respostas.Erro(w, http.StatusInternalServerError, erro)
 	}
-	//w.Write([]byte(fmt.Sprintf("id inserido: %d", usuarioID)))
+	//w.Write([]byte(fmt.Sprintf("id inserido: %d", usuario.ID)))
 	respostas.JSON(w, http.StatusCreated, usuario)
 
 }
